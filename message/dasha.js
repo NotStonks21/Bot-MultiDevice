@@ -242,10 +242,10 @@ return dasha.sendMessage(from, { document: await getBuffer(url), mimetype: mime,
 
 //Please dont edit for urlbutton 
 const buttonsDefault = [
-{ callButton: {displayText: `Number Owner`, phoneNumber: `+628127668234`} },
-{ urlButton: { displayText: `Github Bot`, url : `https://github.com/SenkuXZ`} },
+{ callButton: {displayText: `Number Owner`, phoneNumber: `+593991398786`} },
+{ urlButton: { displayText: ` Bot`, url : `https://youtube.com/channel/UCCfr9OPXCCOqRhQlI1pjxzQ`} },
 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } },
-{ quickReplyButton: { displayText: `Tos`, id: `${prefix}rules` } }
+{ quickReplyButton: { displayText: `Rules`, id: `${prefix}rules` } }
 ]
 
 const textTemplateButtons = (from, text, footer, buttons) => {
@@ -268,31 +268,31 @@ var buatpesan = await generateWAMessageFromContent(from, {
 "hydratedButtons": [
 {
 "urlButton": {
-"displayText": "𝑮𝒊𝒕𝒉𝒖𝒃 𝑶𝒘𝒏𝒆𝒓",
-"url": "https://github.com/SenkuXZ"
+"displayText": "Yt owner",
+"url": "https://youtube.com/channel/UCCfr9OPXCCOqRhQlI1pjxzQ"
 }
 },
 {
 "callButton": {
-"displayText": "𝑪𝒂𝒍𝒍 𝑶𝒘𝒏𝒆𝒓",
-"phoneNumber": "6281804680327"
+"displayText": "call owner",
+"phoneNumber": "593991398786"
 }
 },
 {
 "quickReplyButton": {
-"displayText": "𝑫𝒐𝒏𝒂𝒕𝒆",
+"displayText": "donar?",
 "id": `${prefix}donasi`
 }
 },
 {
 "quickReplyButton": {
-"displayText": "𝑺𝒄𝒓𝒊𝒑𝒕",
+"displayText": "script",
 "id": `${prefix}script`,
 }
 },
 {
 "quickReplyButton": {
-"displayText": "𝑶𝒘𝒏𝒆𝒓",
+"displayText": "owner",
 "id": `${prefix}owner`
 }
 }
@@ -311,7 +311,7 @@ return await generateWAMessage(jidnya, kontennya, {...optionnya,userJid: dasha.a
 
 
 if (M.message) {
-console.log(chalk.black(chalk.greenBright('[ PESAN ]')), chalk.bold(chalk.bgGreen(new Date)), chalk.black(chalk.whiteBright(chats || M.mtype)) + '\n' + chalk.greenBright('=> Dari'), chalk.bold(chalk.bgGreen(pushname)), chalk.yellow(M.sender) + '\n' + chalk.greenBright('=> Di'), chalk.bold(chalk.bgGreen(M.isGroup ? groupName : 'Private Chat', M.chat)))
+console.log(chalk.black(chalk.greenBright('[ mensaje ]')), chalk.bold(chalk.bgGreen(new Date)), chalk.black(chalk.whiteBright(chats || M.mtype)) + '\n' + chalk.greenBright('=> de'), chalk.bold(chalk.bgGreen(pushname)), chalk.yellow(M.sender) + '\n' + chalk.greenBright('=> en'), chalk.bold(chalk.bgGreen(M.isGroup ? groupName : 'Private Chat', M.chat)))
 }
 
 if (isOwner){
@@ -338,7 +338,7 @@ if (stdout) textImg(`${stdout}`)
 
 // BANNED
  if (db.data.users[M.sender].banned && isCmd) {
-await replyNtag(`Maaf @${M.sender.split("@")[0]} Anda Telah Dibanned, Chat Owner Untuk Un Banned`)
+await replyNtag(`Maaf @${M.sender.split("@")[0]} Has sido prohibido, por el propietario de chat baneado`)
 return
 }
 
@@ -351,16 +351,16 @@ let afkTime = user.afkTime
 if (!afkTime || afkTime < 0) continue
 let reason = user.afkReason || ''
 M.reply(`
-Jangan tag dia!
-Dia sedang AFK ${reason ? 'dengan alasan ' + reason : 'tanpa alasan'}
-Selama ${clockString(new Date - afkTime)}
+No lo etiquetes!
+Está siendo AFK ${reason ? 'Por razón ' + reason : 'sin motivo'}
+Para ${clockString(new Date - afkTime)}
 `.trim())
 }
 
 if (db.data.users[M.sender].afkTime > -1) {
 let user = global.db.data.users[M.sender]
 M.reply(`
-Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
+Te detuviste AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
 Selama ${clockString(new Date - user.afkTime)}
 `.trim())
 user.afkTime = -1
@@ -376,12 +376,12 @@ function _0x3725(){const _0x489e76=['quoted','toString','isGroup','emit','fileSh
 switch (command) {
 case 'setcmd': {
 global.db.data.cmd = global.db.data.cmd || {}
-if (!M.quoted)return reply(`Reply stiker!!\nExample : ${prefix + command} menu\n\n\n*Note : Tidak dapat disertai Prefix!!*`)
-if (!M.quoted.fileSha256)return reply('SHA256 Hash Missing')
-if (!q)return reply(`Untuk Command Apa?`)
+if (!M.quoted)return reply(`Reply stiker!!\nEjample : ${prefix + command} menu\n\n\n*Nota : No se puede acompañar Prefix!!*`)
+if (!M.quoted.fileSha256)return reply('SHA256 Hash missing')
+if (!q)return reply(`Para qué comando?`)
 let sticker = global.db.data.cmd
 let hash = M.quoted.fileSha256.toString('base64')
-if (sticker[hash] && sticker[hash].locked)return reply('You have no permission to change this sticker command')
+if (sticker[hash] && sticker[hash].locked)return reply('No tiene permiso para cambiar este comando de pegatina')
 sticker[hash] = {
     q,
     mentionedJid: M.mentionedJid,
@@ -389,30 +389,30 @@ sticker[hash] = {
     at: + new Date,
     locked: false,
 }
-reply(`Done!`)
+reply(`hecho!`)
 }
 break
    
 case 'delcmd': {
 let hash = M.quoted.fileSha256.toString('base64')
-if (!hash)return reply(`Tidak ada hash`)
+if (!hash)return reply(`Ninguno hash`)
 let sticker = global.db.data.cmd
-if (sticker[hash] && sticker[hash].locked)return reply('You have no permission to delete this sticker command')
+if (sticker[hash] && sticker[hash].locked)return reply('No tiene permiso para eliminar este comando de pegatina')
 delete sticker[hash]
-reply(`Done!`)
+reply(`hecho!`)
 }
 break
 
 case 'listcmd': {
 let teks = `
-*List Hash*
-Info: *bold* hash is Locked
+*List carlos*
+Info: *bold* carlos está bloqueado
 
 *Hash :*
  ${Object.entries(global.db.data.cmd).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} 
-*Command: ${value.q}*
-*Creator : @${value.creator.split("@")[0]}*
-*Create Time : ${clockString(new Date - value.at)} ago*
+*Comando : ${value.q}*
+*Creador : @${value.creator.split("@")[0]}*
+*Creador Time : ${clockString(new Date - value.at)} ago*
 *Locked : ${value.locked}*
 
 `).join('\n')}
@@ -423,43 +423,43 @@ break
 
 case 'lockcmd': {
 if (!isOwner)return reply('Only Onwer..')
-if (!M.quoted)return reply('Reply Pesan!')
+if (!M.quoted)return reply('Reply Mensaje!')
 if (!M.quoted.fileSha256)return reply('SHA256 Hash Missing')
 let sticker = global.db.data.cmd
 let hash = M.quoted.fileSha256.toString('base64')
-if (!(hash in sticker))return reply('Hash not found in database')
+if (!(hash in sticker))return reply('Hash no se encuentra en la base de datos')
 sticker[hash].locked = !/^un/i.test(command)
-M.reply('Done!')
+M.reply('hecho!')
 }
 break
 
 case 'afk': {
 let user = global.db.data.users[M.sender]
 user.afkTime = + new Date
-let text = q ? q : 'Tidak Ada!'
+let text = q ? q : 'Ninguno!'
 user.afkReason = text
-replyNtag(`@${M.sender.split("@")[0]} Telah Afk dengan alasan ${text}`)
+replyNtag(`@${M.sender.split("@")[0]} Tener afk por una razón ${text}`)
 }
 break
 
 case 'sc': case 'script': {
-textImg(`Bot Ini menggunakan Script : https://github.com/SenkuXZ/Bot-MultiDevice`)
+textImg(`Este bot utiliza scripts. : no seran compartidas`)
 }
 break
 
 case 'owner': case 'creator':
 let vcard = 'BEGIN:VCARD\n'
     + 'VERSION:3.0\n' 
-    + 'N:;Senkuu.;;;'
-    + 'FN:Senkuu.\n'
+    + 'N:;Carlos.;;;'
+    + 'FN:Carlos.\n'
     + 'ORG:Owner Bot;\n'
-    + 'item1.TEL;type=CELL;type=VOICE;waid=6281804680327:+62 818-0468-0327\n' 
-    + 'item1.X-ABLabel:Creator Dasha\n'
-    + 'item2.EMAIL;type=INTERNET:404senkuu@gmail.com\n'
+    + 'item1.TEL;type=CELL;type=VOICE;waid=593991398786:+593 99 139 8786\n' 
+    + 'item1.X-ABLabel:Creator Carlos\n'
+    + 'item2.EMAIL;type=INTERNET:carlos.e.escobarmc@gmail.com\n'
     + 'item2.X-ABLabel:Email\n'
-    + 'item3.URL:https://instagram.com/021parapaaa_\n'
+    + 'item3.URL:https://instagram.com/c4rl0s_9e\n'
     + 'item3.X-ABLabel:Instagram\n'
-    + 'item4.ADR:;;Indonesia;;;;\n'
+    + 'item4.ADR:;;Ecuador;;;;\n'
     + 'item4.X-ABLabel:Region\n'
     + 'END:VCARD'
 dasha.sendMessage(from, { contacts: { displayName: 'Owner Bot', contacts: [{ vcard }] } }, { quoted: msg })
@@ -467,13 +467,13 @@ break
 
 	
 case 'del': case 'delete': case 'd': {
- if (!M.quoted.isBaileys)return textImg('Pesan tersebut bukan dikirim oleh bot!')
+ if (!M.quoted.isBaileys)return textImg('¡El mensaje no fue enviado por un bot!')
  dasha.sendMessage(M.chat, { delete: { remoteJid: M.chat, fromMe: true, id: M.quoted.id, participant: M.quoted.sender } })
 }
 break
 
 case 'menu': case 'help': {
-sendButton5(from, help.listMenu(prefix, M),`수탉\nsutalg`, await dasha.createMessage(from, {image: {url: setting.pathImg, caption:help.listMenu(prefix, M) }}))
+sendButton5(from, help.listMenu(prefix, M),`수탉\nsutalg', await dasha.createMessage(from, {image: {url: setting.pathImg, caption:help.listMenu(prefix, M) }}))
 }
 break
 
@@ -481,7 +481,7 @@ case 'join': case 'joingc': {
 if (!isOwner) return reply(mess.owner)
 if (!q) return textImg(mess.link)
 if (!isUrl(q)) return textImg(mess.link)
-if (!q.includes('chat.whatsapp.com')) return textImg("Link Invalid")
+if (!q.includes('chat.whatsapp.com')) return textImg("Link Invalido")
 let query = q.split('https://chat.whatsapp.com/')[1]
 let data = await dasha.groupAcceptInvite(query)
 await reply(jsonformat(data))
@@ -493,9 +493,9 @@ case 'setwelcome': {
 if (!M.isGroup)return reply(mess.group)
 if (!isBotGroupAdmins)return reply(mess.botAdmin)
 if (!isGroupAdmins)return reply(mess.admin)
-if (!q)return reply(`Teksnya Mana? Contoh ${prefix + command} ${mess.example1}`)
+if (!q)return reply(`Texto?? Ejemplo ${prefix + command} ${mess.example1}`)
 global.db.data.chats[M.chat].setWelcome = q
-reply('Succes Change Caption Welcome')
+reply('Éxito Cambiar la Bienvenida')
 }
 break
 
@@ -503,8 +503,8 @@ case 'cekwelcome':{
 if (!M.isGroup)return reply(mess.group)
 if(!isGroupAdmins && !isOwner)return
 let chat = global.db.data.chats[from]
-let text = chat.setWelcome ? chat.setWelcome : '*Selamat Datang Di Group @subject*\n─────────────────\n*Nama : @user*\n*Pada : @tanggal*\n*Jangan Lupa Baca Rules Group*\n─────────────────\n*@desc*'
-textImg('*CEK CAPTION WELCOME*\n\n' + text)
+let text = chat.setWelcome ? chat.setWelcome : '*Bienvenidos al Grupo @subject*\n─────────────────\n*Nombre: @user*\n*En : @tanggal*\n*No olvides leer el grupo de reglas*\n─────────────────\n*@desc*'
+textImg('*CONSULTA EL TÍTULO DE BIENVENIDA*\n\n' + text)
 }
 break
 
@@ -512,7 +512,7 @@ case 'delwelcome':{
 if (!M.isGroup)return reply(mess.group)
 if(!isBotGroupAdmins && !isOwner)return
 global.db.data.chats[from].setWelcome = ''
-textImg('Done menghapus caption welcome!')
+textImg('Hecho eliminado el título de bienvenida!')
 }
 break
             
@@ -520,9 +520,9 @@ case 'setleave': {
 if (!M.isGroup)return reply(mess.group)
 if (!isBotGroupAdmins)return reply(mess.botAdmin)
 if (!isGroupAdmins)return reply(mess.admin)
-if (!q)return reply(`Teksnya Mana? Contoh ${prefix + command} ${mess.example2}`)
+if (!q)return reply(`¿Qué texto? Ejemplo ${prefix + command} ${mess.example2}`)
 global.db.data.chats[M.chat].setLeave = q
-reply('Succes Change Caption Leave')
+reply('Éxito Cambiar la despedida')
 }
 break
 
@@ -530,8 +530,8 @@ case 'cekleave': case 'cekleft':{
 if (!M.isGroup)return reply(mess.group)
 if(!isGroupAdmins && !isOwner)return
 let chat = global.db.data.chats[from]
-let text = chat.setLeave ? chat.setLeave : '*Sayonara* 👋\n─────────────────\n*Nama : @user*\n*Pada : @tanggal*\n\nTelah Meninggalkan Group @subject'
-textImg('*CEK CAPTION LEAVE*\n\n' + text)
+let text = chat.setLeave ? chat.setLeave : '*ADIOS* 👋\n─────────────────\n*Name : @user*\n*En : @tanggal*\n\nHan abandonado el grupo @subject'
+textImg('*COMPROBAR LA DESPEDIDA XD S*\n\n' + text)
 }
 break
 
@@ -539,7 +539,7 @@ case 'delleave': case 'delleft':{
 if (!M.isGroup)return reply(mess.group)
 if(!isBotGroupAdmins && !isOwner)return
 global.db.data.chats[from].setLeave = ''
-textImg('Done menghapus caption leave!')
+textImg('¡Hecho eliminar el titulo de despedida!')
 }
 break
 
@@ -549,9 +549,9 @@ if (!isOwner) return reply(mess.owner)
 if (isImage || isQuotedImage) {
 let img = await dasha.downloadAndSaveMediaMessage(quoted)
 await dasha.updateProfilePicture(botNumber, { url: img}).then(res => fs.unlinkSync(img))
-await reply('Done..')
+await reply('listo..')
 } else {
-reply('Reply Img nya')
+reply('Reply Img bro')
 }
 break
 
@@ -561,19 +561,19 @@ if (!isGroup) return reply(mess.group)
 if (!isGroupAdmins) return reply(mess.admin)
 if (!isBotGroupAdmins) return reply(mess.botAdmin)
 let link = await dasha.groupRevokeInvite(from)
-await textImg('Done' + `\n\n*New Link for ${groupName}* :\n https://chat.whatsapp.com/${link}`)
+await textImg('listo' + `\n\n*Nuevo Link en ${groupName}* :\n https://chat.whatsapp.com/${link}`)
 break
 
 case 'leave':
 if (!isGroup) return reply(mess.group)
 if (!isGroupAdmins && !isOwner) return reply(mess.admin)
-reply('Sayonara~ 👋').then(async res => await dasha.groupLeave(from))
+reply('Adios~ 👋').then(async res => await dasha.groupLeave(from))
 break
 
 case 'tagall': case 'infoall':
 if (!isGroup) return reply(mess.group)
 if (!isGroupAdmins && !isOwner) return reply(mess.admin)
-let teks = `*Mention All\n*Message :  ${q ? q : 'Nothing'}*\n\n`
+let teks = `*Mencion All\n*mensaje:  ${q ? q : 'ninguno'}*\n\n`
 for (let mem of groupMembers) {
 teks += `࿃➡️ @${mem.id.split('@')[0]}\n`
 }
@@ -607,7 +607,7 @@ const latensi = speed() - timestamp
 const neww = performance.now()
 const oldd = performance.now()
 textImg(`
-Kecepatan Respon ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
+Velocidad de respuesta ${latensi.toFixed(4)} _Segundos_ \n ${oldd - neww} _milisegundos_\n\nRuntime : ${runtime(process.uptime())}
 
 💻 Info Server
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
@@ -632,25 +632,25 @@ textImg(`${runtime(run)}`)
 break 
 
 case 'tomp4': case 'tovideo': {
-if (!/webp/.test(mime))return reply(`balas stiker dengan caption *${prefix + command}*`)
+if (!/webp/.test(mime))return reply(`responder a pegatinas con el cmd *${prefix + command}*`)
 let media = await dasha.downloadAndSaveMediaMessage(quoted)
 let webpToMp4 = await webp2mp4File(media)
-await dasha.sendMessage(M.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' } }, { quoted: msg})
+await dasha.sendMessage(M.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp a Video' } }, { quoted: msg})
     await fs.unlinkSync(media)
 }
 break
 
 case 'togif': {
-if (!/webp/.test(mime))return reply(`balas stiker dengan caption *${prefix + command}*`)
+if (!/webp/.test(mime))return reply(`responder a pegatinas con comando *${prefix + command}*`)
 let media = await dasha.downloadAndSaveMediaMessage(quoted)
 let webpToMp4 = await webp2mp4File(media)
-await dasha.sendMessage(M.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: msg })
+await dasha.sendMessage(M.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp a Video' }, gifPlayback: true }, { quoted: msg })
     await fs.unlinkSync(media)
 }
 break
 
 case 'take': case 'colong': case 'swm': case 'stickerwm': case 'wm': case 'exif': {
-if (!quoted)return textImg(`Reply Media dengan caption ${prefix + command} Punya|Senkuu`)
+if (!quoted)return textImg(`menciona de respuesta con comando ${prefix + command} texto|texto`)
 let { writeExif } = require('../lib/exif')
 let media = {}
 media.mimetype = mime
@@ -709,10 +709,10 @@ break
 
 case 'absen':
 global.db.data.absen = global.db.data.absen || {} 
-if (!(from in global.db.data.absen)) return reply(`Tidak ada absen berlangsung!`) 
+if (!(from in global.db.data.absen)) return reply(`No duró ausencias.!`) 
 let absen = global.db.data.absen[from][1] 
 const wasVote = absen.includes(M.sender) 
-if (wasVote)return reply('Kamu sudah absen!')
+if (wasVote)return reply('Estás fuera!')
 absen.push(M.sender) 
 let d = new Date 
 let date = d.toLocaleDateString('id', { 
@@ -721,10 +721,10 @@ let date = d.toLocaleDateString('id', {
   year: 'numeric' 
 }) 
 let list = absen.map((v, i) => `│ ${i + 1}. @${v.split`@`[0]}`).join('\n') 
-let caption = `Tanggal: ${date}
+let caption = `Fecha: ${date}
 
 ${global.db.data.absen[from][2] ? global.db.data.absen[from][2] + '\n' : ''}
-╭─「 Daftar Absen 」
+╭─「 Daftar Ausente 」
 │ Total: ${absen.length}
 ${list}
 ╰────`.trim()
@@ -746,7 +746,7 @@ let absenn = global.db.data.absen[from][1]
 let listt = absenn.map((v, i) => `│ ${i + 1}. @${v.split`@`[0]}`).join('\n') 
 let captionn = `Tanggal: ${datee}
 ${global.db.data.absen[from][2] ? global.db.data.absen[from][2] + '\n' : ''}
-╭─「 Daftar Absen 」
+╭─「 Daftar Ausente 」
 │ Total: ${absenn.length}
 ${listt}
 ╰────`.trim() 
@@ -758,21 +758,21 @@ if (M.isGroup) {
   if (!(isGroupAdmins || isOwner))return reply('Only Admin')
   } 
   global.db.data.absen = global.db.data.absen || {}
-  if (!(from in global.db.data.absen))return reply(`Tidak ada absen berlangsung!`)
+  if (!(from in global.db.data.absen))return reply(`No duró ausencias.!`)
   delete global.db.data.absen[from]
-M.reply(`Absen berhasil dihapus`)
+M.reply(`Ausencia eliminada con éxito`)
 break
 
 
 case 'absenstart':
-if(!q)return reply('Absennya apa?')
+if(!q)return reply('Qué ausencias?')
 if (M.isGroup) { 
   if (!(isGroupAdmins || isOwner))return reply('Only Admin')
 } 
 global.db.data.absen = global.db.data.absen || {}
-if (from in global.db.data.absen)return reply(`Masih ada absen di chat ini!`)
+if (from in global.db.data.absen)return reply(`Todavía hay una falta en este chat.!`)
 global.db.data.absen[from] = [
-  await dasha.sendMessage(from,{text:'Absen Di Mulai..'},{quoted:msg}),
+  await dasha.sendMessage(from,{text:'Ausente al principio..'},{quoted:msg}),
   [], 
   q ]
 break

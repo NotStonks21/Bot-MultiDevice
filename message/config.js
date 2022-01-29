@@ -18,16 +18,16 @@ global.APIKeys = {
 
 
 // Nomor Owner
-global.ownerNumber = ["6281804680327@s.whatsapp.net","6285878313791@s.whatsapp.net"]
-global.owner = ["6281804680327","62818046803277"]
+global.ownerNumber = ["593991398786@s.whatsapp.net","593991398786@s.whatsapp.net"]
+global.owner = ["593991398786","593991398786"]
 
 
 // Nama Bot
-global.botName = 'Dash - Bot'
+global.botName = 'Kitzia - Bot'
 
 
 // EXIF
-global.packname = 'Dash Bot'
+global.packname = 'Kitzia Bot'
 global.author = '❤️ Multi-Device ❤️'
 
 
@@ -37,20 +37,20 @@ global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sessionName = 'Dash'
 global.Mode = 'Public'
 global.mess = {
-    admin: 'Fitur Khusus Admin Group!',
-    botAdmin: 'Bot Harus Menjadi Admin Terlebih Dahulu!',
-    owner: 'Fitur Khusus Owner Bot',
-    group: 'Fitur Digunakan Hanya Untuk Group!',
-    private: 'Fitur Digunakan Hanya Untuk Private Chat!',
-    query: 'Command harus disertai Query..',
-    link: 'Command harus disertai Link/Url',
+    admin: 'Características especiales para adm del grupo!',
+    botAdmin: 'Los bots deben ser administradores primero!',
+    owner: 'Características especiales para Owner Bot',
+    group: 'Características utilizadas solo para grupos!',
+    private: 'Funciones utilizadas solo para el chat privado!',
+    query: 'El comando debe ir acompañado de una consulta..',
+    link: 'El comando debe ir acompañado de Link/Url',
     wait: 'Loading...',
-    done: 'Berhasil..',
-    wrongFormat: 'Perintah Salah!!\nSertakan Link setelah Command..',
-    example1: 'Welcome @user Di Group @subject Jangan Lupa Baca Rules @desc\n\nNote :\n1. @user (Mention User Join)\n2. @subject (Group Name)\n3. @tanggal (Date Now)\n4. @desc (Get Description Group)'
+    done: 'Logrado..',
+    wrongFormat: '¡¡Orden incorrecto!!\n Únete Link después del comando..',
+    example1: 'Welcome @user al Grupo @subject No olvides leer las reglas @desc\n\nNota :\n1. @user (Mencionar unirse al usuario)\n2. @subject (Group Name)\n3. @tanggal (Fecha ahora)\n4. @desc (Obtener grupo de descripción)'
 ,
-    example2: 'Good Bye @user Di Group @subject Jangan Lupa Baca Rules @desc\n\nNote :\n1. @user (Mention User Join)\n2. @subject (Group Name)\n3. @tanggal (Date Now)\n4. @desc (Get Description Group)',
-    rules : `Isi Sendiri!!`
+    example2: 'Good Bye @user del grupo @subject No olvides leer las reglas @desc\n\nNota :\n1. @user (Mencionar unirse al usuario)\n2. @subject (Group Name)\n3. @tanggal (Fecha ahora)\n4. @desc (Obtener grupo de descripción)',
+    rules : `Llénate!!`
 }
 
 
